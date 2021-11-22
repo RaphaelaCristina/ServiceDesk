@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import javafx.scene.layout.Pane;
 

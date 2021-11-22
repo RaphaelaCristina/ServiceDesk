@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import java.util.List;
 

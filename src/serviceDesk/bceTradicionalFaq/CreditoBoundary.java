@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;

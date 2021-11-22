@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import java.time.LocalDate;
 
@@ -53,12 +53,8 @@ public class Faq {
     }
 
     public void setStatus(String status) {
-        if(status == null){
-            this.status = "Não respondido";
-        } else {
-            this.status = status;
-        }
 
+        this.status = status;
     }
 
     public LocalDate getDataCriacao() {

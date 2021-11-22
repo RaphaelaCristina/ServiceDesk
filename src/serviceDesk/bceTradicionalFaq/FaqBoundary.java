@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -160,7 +160,7 @@ public class FaqBoundary implements StrategyBoundary{
         });
 
         btnNovoFaq.setOnAction((e ->{
-            control.novoPet();
+            control.novoFaq();
         }));
 
         panPrincipal.setTop(panCampos); //colocando painel de campos dentro do principal

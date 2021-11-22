@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicional;
+package serviceDesk.bceTradicionalFaq;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
@@ -73,7 +73,7 @@ public class FaqControl {
         listaView.addAll(faqDAO.pesquisarPorTitulo(""));
     }
 
-    public void novoPet() {
+    public void novoFaq() {
         Faq f = new Faq();
         f.setId(0);
         setEntity(f);
