@@ -80,6 +80,26 @@ public class FaqDAOImpl implements FaqDAO {
 
     @Override
     public void atualizar(long id, Faq f) {
+        try{
+            Connection con = DriverManager.getConnection(DBURL, DBUSER, DBPASS);
+
+            String sql = " UPDATE faq SET titulo = ?, descricao = ?, status = ? , dataCriacao = ?, resposta = ? WHERE id = ?";
+            System.out.println(sql);
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, f.getTitulo());
+            stmt.setString(2, f.getDescricao());
+            stmt.setString(3, f.getStatus());
+            stmt.setDate(4, java.sql.Date.valueOf(f.getDataCriacao()));
+            stmt.setString(5, f.getResposta());
+            stmt.setLong(6, f.getId());
+            stmt.executeUpdate();
+
+            con.close();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
