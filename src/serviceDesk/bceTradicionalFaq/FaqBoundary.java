@@ -20,7 +20,7 @@ import java.util.Optional;
 public class FaqBoundary implements StrategyBoundary{
 
     private TextField txtId = new TextField();
-    private  TextField txtTitulo = new TextField();
+    private TextField txtTitulo = new TextField();
     private TextField txtDescricao = new TextField();
     private ComboBox<String> cmbStatus = new ComboBox<>();
     private TextField txtDataCriacao = new TextField();
@@ -166,7 +166,7 @@ public class FaqBoundary implements StrategyBoundary{
         panPrincipal.setTop(panCampos); //colocando painel de campos dentro do principal
         panPrincipal.setCenter(table); //colocando a tabela no meio do painel principal
         this.criarTabela(); //criar tabela
-        Scene scn = new Scene(panPrincipal, 600, 400);
+        //Scene scn = new Scene(panPrincipal, 600, 400);
 
         return panPrincipal;
 

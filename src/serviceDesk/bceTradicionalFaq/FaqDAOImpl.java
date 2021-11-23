@@ -15,7 +15,7 @@ public class FaqDAOImpl implements FaqDAO {
 
     public void FaqDaoImpl(){
         try{
-            Class.forName("org.mariadb.jdbc.Deriver");
+            Class.forName("org.mariadb.jdbc.Driver");
         }catch(Exception e){
             e.printStackTrace();
         }

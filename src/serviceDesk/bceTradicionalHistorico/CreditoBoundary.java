@@ -1,11 +1,10 @@
-package serviceDesk.bceTradicionalFaq;
+package serviceDesk.bceTradicionalHistorico;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-
-public class CreditoBoundary implements StrategyBoundary{
+public class CreditoBoundary implements StrategyBoundary {
 
     @Override
     public Pane render(){
@@ -19,4 +18,5 @@ public class CreditoBoundary implements StrategyBoundary{
         );
         return pane;
     }
+
 }

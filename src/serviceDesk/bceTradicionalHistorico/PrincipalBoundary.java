@@ -1,4 +1,4 @@
-package serviceDesk.bceTradicionalFaq;
+package serviceDesk.bceTradicionalHistorico;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -17,25 +17,25 @@ import java.util.Map;
 
 public class PrincipalBoundary extends Application implements EventHandler<ActionEvent> {
 
-    FaqBoundary faqBoundary = new FaqBoundary();
+    HistoricoBoundary historicoBoundary = new HistoricoBoundary();
     CreditoBoundary creditoBoundary = new CreditoBoundary();
     Map<String , StrategyBoundary> telas = new HashMap<>();
 
     BorderPane panePrincipal = new BorderPane();
 
     public PrincipalBoundary(){
-        telas.put("FAQs", new FaqBoundary());
-        telas.put("Creditos", new CreditoBoundary());
+        telas.put("Históricos", new HistoricoBoundary());
+        telas.put("Créditos", new CreditoBoundary());
     }
-
     @Override
     public void start(Stage stage) throws Exception {
 
         Scene scn = new Scene(panePrincipal, 1024, 768);
 
         stage.setScene(scn);
-        stage.setTitle("FAQ");
+        stage.setTitle("Históricos");
         stage.show();
+
 
         MenuBar menuPrincipal = new MenuBar();
         Menu menuArquivo = new Menu("Arquivos");
@@ -43,11 +43,11 @@ public class PrincipalBoundary extends Application implements EventHandler<Actio
         Menu menuAjuda = new Menu("Ajuda");
 
         MenuItem itemSair = new MenuItem("Sair");
-        MenuItem itemFaqs = new MenuItem("FAQs");
+        MenuItem itemHistorico = new MenuItem("Históricos");
         MenuItem itemCreditos = new MenuItem("Créditos");
 
         menuArquivo.getItems().addAll(itemSair);
-        menuCadastros.getItems().addAll(itemFaqs);
+        menuCadastros.getItems().addAll(itemHistorico);
         menuAjuda.getItems().addAll(itemCreditos);
 
         itemSair.setOnAction((e)->{
@@ -55,27 +55,26 @@ public class PrincipalBoundary extends Application implements EventHandler<Actio
             System.exit(0);
         });
 
-        itemFaqs.setOnAction(this);
+        itemHistorico.setOnAction(this);
         itemCreditos.setOnAction(this);
 
         menuPrincipal.getMenus().addAll(menuArquivo, menuCadastros, menuAjuda);
         panePrincipal.setTop(menuPrincipal);
-
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Application.launch(PrincipalBoundary.class, args);
     }
 
+
     @Override
-    //Esse mecanismo faz com que a tela funcione para todos os menus
     public void handle(ActionEvent event) {
-      EventTarget target =  event.getTarget();
-      if(target instanceof MenuItem){
-          MenuItem menuItem = (MenuItem) target;
-          String texto = menuItem.getText();
-          StrategyBoundary tela = telas.get(texto);
-          panePrincipal.setCenter(tela.render());
-      }
+        EventTarget target = event.getTarget();
+        if(target instanceof MenuItem){
+            MenuItem menuItem = (MenuItem) target;
+            String texto = menuItem.getText();
+            StrategyBoundary tela = telas.get(texto);
+            panePrincipal.setCenter(tela.render());
     }
+}
 }

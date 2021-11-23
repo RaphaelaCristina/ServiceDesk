@@ -13,7 +13,7 @@ public class FaqControl {
     LongProperty id = new SimpleLongProperty(0);
     StringProperty titulo = new SimpleStringProperty("");
     StringProperty descricao = new SimpleStringProperty("");
-    StringProperty status = new SimpleStringProperty("");
+    StringProperty status = new SimpleStringProperty("Não Respondido");
     ObjectProperty dataCriacao = new SimpleObjectProperty(LocalDate.now());
     StringProperty resposta = new SimpleStringProperty("");
 
