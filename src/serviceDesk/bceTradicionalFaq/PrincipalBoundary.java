@@ -25,7 +25,7 @@ public class PrincipalBoundary extends Application implements EventHandler<Actio
 
     public PrincipalBoundary(){
         telas.put("FAQs", new FaqBoundary());
-        telas.put("Creditos", new CreditoBoundary());
+        telas.put("Créditos", new CreditoBoundary());
     }
 
     @Override
@@ -64,18 +64,23 @@ public class PrincipalBoundary extends Application implements EventHandler<Actio
     }
 
     public static void main(String[] args) {
-        Application.launch(PrincipalBoundary.class, args);
+       Application.launch(PrincipalBoundary.class, args);
     }
 
     @Override
-    //Esse mecanismo faz com que a tela funcione para todos os menus
     public void handle(ActionEvent event) {
-      EventTarget target =  event.getTarget();
-      if(target instanceof MenuItem){
-          MenuItem menuItem = (MenuItem) target;
-          String texto = menuItem.getText();
-          StrategyBoundary tela = telas.get(texto);
-          panePrincipal.setCenter(tela.render());
-      }
+
+        EventTarget target = event.getTarget();
+        if(target instanceof MenuItem){
+            MenuItem menuItem = (MenuItem) target;
+            String texto = menuItem.getText();
+            StrategyBoundary tela = telas.get(texto);
+            panePrincipal.setCenter(tela.render());
+        }
     }
+
+
+
 }
+
+

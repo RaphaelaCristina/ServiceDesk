@@ -13,7 +13,7 @@ import javafx.util.converter.NumberStringConverter;
 
 import java.util.Optional;
 
-public class HistoricoBoundary implements  StrategyBoundary {
+public class HistoricoBoundary implements StrategyBoundary {
 
     private TextField txtIdHistorico = new TextField();
     private TextField txtIdFormulario = new TextField();

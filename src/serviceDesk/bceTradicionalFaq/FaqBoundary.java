@@ -4,7 +4,6 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -117,6 +116,7 @@ public class FaqBoundary implements StrategyBoundary{
     public Pane render () {
         BorderPane panPrincipal = new BorderPane();
         GridPane panCampos = new GridPane();
+
         //O ID não será editável e está desabilitado
         txtId.setEditable(false);
         txtId.setDisable(true);
@@ -166,7 +166,6 @@ public class FaqBoundary implements StrategyBoundary{
         panPrincipal.setTop(panCampos); //colocando painel de campos dentro do principal
         panPrincipal.setCenter(table); //colocando a tabela no meio do painel principal
         this.criarTabela(); //criar tabela
-        //Scene scn = new Scene(panPrincipal, 600, 400);
 
         return panPrincipal;
 
