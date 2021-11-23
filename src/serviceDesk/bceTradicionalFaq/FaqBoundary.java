@@ -16,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
-public class FaqBoundary implements StrategyBoundary{
+public class FaqBoundary extends CommandProducer implements StrategyBoundary{
 
     private TextField txtId = new TextField();
     private TextField txtTitulo = new TextField();
@@ -150,6 +150,13 @@ public class FaqBoundary implements StrategyBoundary{
 
         panCampos.add(btnSalvar, 0 , 6);
         panCampos.add(btnPesquisar, 1 , 6);
+
+        Button btnCreditos = new Button("Creditos");
+        panCampos.add(btnCreditos, 2, 5);
+
+        btnCreditos.setOnAction((e) -> {
+            executeCommand("BOUNDARY-CREDITOS");
+        });
 
         btnPesquisar.setOnAction( e -> {
             control.pesquisar();

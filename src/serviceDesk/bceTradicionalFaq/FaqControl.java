@@ -32,7 +32,6 @@ public class FaqControl {
        f.setStatus(status.get());
        f.setDataCriacao((LocalDate) dataCriacao.get()); // Cast para LocalDate pois é objeto
        f.setResposta(resposta.get());
-
        return f;
     }
 

@@ -13,7 +13,7 @@ import javafx.util.converter.NumberStringConverter;
 
 import java.util.Optional;
 
-public class HistoricoBoundary implements StrategyBoundary {
+public class HistoricoBoundary extends CommandProducer implements StrategyBoundary {
 
     private TextField txtIdHistorico = new TextField();
     private TextField txtIdFormulario = new TextField();
@@ -126,6 +126,12 @@ public class HistoricoBoundary implements StrategyBoundary {
         panCampos.add(btnAdicionar, 0, 4);
         panCampos.add(btnPesquisar, 1, 4);
 
+        Button btnCreditos = new Button("Créditos");
+        panCampos.add(btnCreditos, 2, 4);
+
+        btnCreditos.setOnAction((e) -> {
+            executeCommand("BOUNDARY-CREDITOS");
+        });
 
         btnAdicionar.setOnAction(e -> {
             control.salvar();
