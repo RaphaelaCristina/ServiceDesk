@@ -28,6 +28,7 @@ public class FaqBoundary extends CommandProducer implements StrategyBoundary{
     private Button btnNovoFaq = new Button("Novo FAQ");
     private Button btnSalvar = new Button("Salvar");
     private Button btnPesquisar = new Button("Pesquisar");
+    private Button btnHistorico = new Button("Historico");
 
     private FaqControl control = new FaqControl(); //composição
 
@@ -151,11 +152,11 @@ public class FaqBoundary extends CommandProducer implements StrategyBoundary{
         panCampos.add(btnSalvar, 0 , 6);
         panCampos.add(btnPesquisar, 1 , 6);
 
-        Button btnCreditos = new Button("Creditos");
-        panCampos.add(btnCreditos, 2, 5);
+        Button btnHistorico = new Button("Historicos");
+        panCampos.add(btnHistorico, 2, 4);
 
-        btnCreditos.setOnAction((e) -> {
-            executeCommand("BOUNDARY-CREDITOS");
+        btnHistorico.setOnAction((e) -> {
+            executeCommand("BOUNDARY-HISTORICO");
         });
 
         btnPesquisar.setOnAction( e -> {

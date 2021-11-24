@@ -13,12 +13,12 @@ import javafx.stage.Stage;
 public class MainHistórico extends Application implements  CommandExecution {
 
     HistoricoBoundary historicoBoundary = new HistoricoBoundary();
-    CreditoBoundary creditoBoundary = new CreditoBoundary();
+    //CreditoBoundary creditoBoundary = new CreditoBoundary();
 
 
     public MainHistórico(){
         historicoBoundary.addExecution(this);
-        creditoBoundary.addExecution(this);
+       // creditoBoundary.addExecution(this);
     }
 
     BorderPane panePrincipal = new BorderPane();

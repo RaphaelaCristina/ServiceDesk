@@ -24,10 +24,14 @@ public class HistoricoBoundary extends CommandProducer implements StrategyBounda
     private Button btnNovoHistorico = new Button("Novo Histórico");
     private Button btnAdicionar = new Button("Salvar/Atualizar");
     private Button btnPesquisar = new Button("Pesquisar");
+    private Button btnFaqs = new Button("Cadastro FAQs");
+
 
     private HistoricoControl control = new HistoricoControl();
 
     private TableView<Historico> table = new TableView<>();
+
+
 
     private void criarTabela() {
 
@@ -127,11 +131,8 @@ public class HistoricoBoundary extends CommandProducer implements StrategyBounda
         panCampos.add(btnAdicionar, 0, 4);
         panCampos.add(btnPesquisar, 1, 4);
 
-        Button btnCreditos = new Button("Creditos");
-        panCampos.add(btnCreditos, 2, 5);
-
-        btnCreditos.setOnAction((e) -> {
-            executeCommand("BOUNDARY-CREDITOS");
+        btnFaqs.setOnAction((e)->{
+            executeCommand("BOUNDARY-FAQ");
         });
 
         btnAdicionar.setOnAction(e -> {

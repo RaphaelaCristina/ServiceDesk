@@ -11,18 +11,16 @@ public class CreditoBoundary extends CommandProducer implements StrategyBoundary
     @Override
     public Pane render(){
         VBox pane = new VBox();
-        Button btnFaqs = new Button("Cadastro FAQs");
+
 
         pane.getChildren().addAll(
                 new Label("Bruno Espejo"),
                 new Label("Cinthya Ravena"),
                 new Label("Raphaela Britto"),
-                new Label("Professor Antonio Rodrigues - POO"), btnFaqs
+                new Label("Professor Antonio Rodrigues - POO")
         );
 
-        btnFaqs.setOnAction((e)->{
-            executeCommand("BOUNDARY-FAQ");
-        });
+
         return pane;
     }
 
