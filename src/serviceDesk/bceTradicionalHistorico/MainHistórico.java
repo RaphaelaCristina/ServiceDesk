@@ -10,13 +10,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-public class PrincipalBoundary extends Application implements  CommandExecution {
+public class MainHistórico extends Application implements  CommandExecution {
 
     HistoricoBoundary historicoBoundary = new HistoricoBoundary();
     CreditoBoundary creditoBoundary = new CreditoBoundary();
 
 
-    public PrincipalBoundary(){
+    public MainHistórico(){
         historicoBoundary.addExecution(this);
         creditoBoundary.addExecution(this);
     }
@@ -33,15 +33,15 @@ public class PrincipalBoundary extends Application implements  CommandExecution 
         MenuBar menuPrincipal = new MenuBar();
         Menu menuArquivo = new Menu("Arquivos");
         Menu menuCadastros = new Menu("Cadastros");
-        Menu menuAjuda = new Menu("Ajuda");
+
 
         MenuItem itemSair = new MenuItem("Sair");
         MenuItem itemHistorico = new MenuItem("Históricos");
-        MenuItem itemCreditos = new MenuItem("Creditos");
+
 
         menuArquivo.getItems().addAll(itemSair);
         menuCadastros.getItems().addAll(itemHistorico);
-        menuAjuda.getItems().addAll(itemCreditos);
+
 
         itemSair.setOnAction((e) -> {
             execute("SAIR");
@@ -50,11 +50,9 @@ public class PrincipalBoundary extends Application implements  CommandExecution 
         itemHistorico.setOnAction((e) -> {
             execute("BOUNDARY-HISTORICO");
         });
-        itemCreditos.setOnAction((e) -> {
-            execute("BOUNDARY-CREDITOS");
-        });
 
-        menuPrincipal.getMenus().addAll(menuArquivo, menuCadastros, menuAjuda);
+
+        menuPrincipal.getMenus().addAll(menuArquivo, menuCadastros);
         panePrincipal.setTop(menuPrincipal);
 
         stage.setScene(scn);
@@ -80,8 +78,6 @@ public class PrincipalBoundary extends Application implements  CommandExecution 
     public void execute(String command) {
         if("BOUNDARY-HISTORICO".equals(command)) {
             panePrincipal.setCenter(historicoBoundary.render());
-        } else if ("BOUNDARY-CREDITOS".equals(command)) {
-            panePrincipal.setCenter(creditoBoundary.render());
         } else if("SAIR".equals(command)){
             Platform.exit();
             System.exit(0);
@@ -89,6 +85,6 @@ public class PrincipalBoundary extends Application implements  CommandExecution 
     }
 
     public static void main(String[] args) {
-        Application.launch(PrincipalBoundary.class, args);
+        Application.launch(MainHistórico.class, args);
     }
 }

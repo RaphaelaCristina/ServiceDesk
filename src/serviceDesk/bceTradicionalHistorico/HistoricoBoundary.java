@@ -1,5 +1,6 @@
 package serviceDesk.bceTradicionalHistorico;
 
+import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -126,8 +127,8 @@ public class HistoricoBoundary extends CommandProducer implements StrategyBounda
         panCampos.add(btnAdicionar, 0, 4);
         panCampos.add(btnPesquisar, 1, 4);
 
-        Button btnCreditos = new Button("Créditos");
-        panCampos.add(btnCreditos, 2, 4);
+        Button btnCreditos = new Button("Creditos");
+        panCampos.add(btnCreditos, 2, 5);
 
         btnCreditos.setOnAction((e) -> {
             executeCommand("BOUNDARY-CREDITOS");
@@ -152,4 +153,6 @@ public class HistoricoBoundary extends CommandProducer implements StrategyBounda
 
         return panPrincipal;
     }
+
+
 }
